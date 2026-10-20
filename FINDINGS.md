@@ -10,7 +10,7 @@ Run 2026-10-20 on an Apple Silicon Mac. tql 0.17.0, DuckDB 1.5.6, tabstack-cli, 
 4. tql's AI prompt (`a`) drafts SQL with a local Ollama model:
    `TQL_AI_URL=http://localhost:11434/v1 TQL_AI_MODEL=qwen3:8b tql connect ollama-library`
 
-tql sends the model a system prompt naming the dialect ("a single SQL query for a duckdb database"), its rules (including "Add a limit unless the question is an aggregate"), and the schema as table names, column names, and column types. It sends no row values. Captured request: `tql-ai-request-sample.json`. (tql's settings text says "Only table and column names are sent, never rows"; the request also carries types.)
+tql sends the model a system prompt naming the dialect ("a single SQL query for a duckdb database"), its rules (including "Add a limit unless the question is an aggregate"), and the schema as table names, column names, and column types. It sends no row values and no column comments (tested with `COMMENT ON COLUMN`). Captured request: `tql-ai-request-sample.json`. (tql's settings text says "Only table and column names are sent, never rows"; the request also carries types.)
 
 ## Test
 
