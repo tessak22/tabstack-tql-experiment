@@ -1,0 +1,13 @@
+{"type":"object","properties":{"models":{"type":"array","items":{"type":"object","properties":{
+"name":{"type":"string"},
+"description":{"type":"string"},
+"supports_tools":{"type":"boolean","description":"true if the model card shows the tools tag"},
+"supports_vision":{"type":"boolean","description":"true if the model card shows the vision tag"},
+"supports_thinking":{"type":"boolean","description":"true if the model card shows the thinking tag"},
+"is_embedding_model":{"type":"boolean","description":"true if the model card shows the embedding tag"},
+"is_cloud_model":{"type":"boolean","description":"true if the model card shows the cloud tag"},
+"size_tags":{"type":"array","items":{"type":"string"},"description":"parameter size tags exactly as shown, like 270m, 8b, 70b"},
+"pulls_label":{"type":"string","description":"pull count exactly as shown, e.g. 1.2M"},
+"tag_count":{"type":"integer"},
+"updated_label":{"type":"string","description":"exactly as shown, e.g. 3 weeks ago"}
+},"required":["name"]}}},"required":["models"]}

@@ -1,0 +1,4 @@
+q1	Top 10 models with vision capability that come in a size of 8b or smaller, by pulls	select name from models where list_contains(capabilities,'vision') and len(list_filter(sizes, lambda s: (s like '%b' and try_cast(rtrim(s,'b') as double) <= 8) or s like '%m')) > 0 order by pulls desc limit 10
+q2	How many models support tools?	select count(*) from models where list_contains(capabilities,'tools')
+q3	Which 5 embedding models have the most pulls?	select name from models where list_contains(capabilities,'embedding') order by pulls desc limit 5
+q4	Which models were updated in the last 7 days?	select name from models where updated like '%hour%' or updated like '%minute%' or updated like '%day%' order by name

@@ -1,0 +1,9 @@
+{"type":"object","properties":{"models":{"type":"array","items":{"type":"object","properties":{
+"name":{"type":"string"},
+"description":{"type":"string"},
+"capabilities":{"type":"array","items":{"type":"string"},"description":"capability tags like tools, vision, thinking, embedding, cloud"},
+"sizes":{"type":"array","items":{"type":"string"},"description":"parameter size tags like 7b, 70b"},
+"pulls":{"type":"string","description":"pull count as shown, e.g. 1.2M"},
+"tag_count":{"type":"integer"},
+"updated":{"type":"string","description":"as shown, e.g. 3 weeks ago"}
+},"required":["name"]}}},"required":["models"]}

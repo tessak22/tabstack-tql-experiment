@@ -1,0 +1,4 @@
+q1	Top 10 models with vision capability that come in a size of 8b or smaller, by pulls	select name from models where supports_vision and smallest_size_billions_of_params <= 8 order by total_pulls desc limit 10
+q2	How many models support tools?	select count(*) from models where supports_tools
+q3	Which 5 embedding models have the most pulls?	select name from models where is_embedding_model order by total_pulls desc limit 5
+q4	Which models were updated in the last 7 days?	select name from models where last_updated_approx_date >= date '2026-10-13' order by name
