@@ -51,6 +51,6 @@ STRIP_Q4_LIMIT=1 DB=models-v2.duckdb RES=results-v2 QFILE=questions-v2.tsv pytho
 
 ## Notes
 
-- `extract.json` returned `null` rather than `false` for boolean fields, so `load-v2.sql` coalesces them.
+- `extract.json` returned `null` rather than `false` for boolean fields that were not in `required`, so `load-v2.sql` coalesces them. With the booleans added to `required` (`schema-v3-required.json`), every value came back `true` or `false` (`library-v3-required.json`).
 - tql opens DuckDB files read-write, and DuckDB allows one writer per file, so close tql before running `score.py`.
 - tql sends the model the table names, column names, and column types, never row values. That is why the column names matter.

@@ -44,7 +44,7 @@ Without removing the LIMIT, v2 scores are qwen3:8b 8/12, qwen2.5-coder:14b 8/12,
 - llama3.1:8b produced many SQL errors on both tables: Postgres-only syntax, `public.models` schema prefix, nonexistent functions.
 - Every draft was visible in tql's SQL pane before running, with a comment explaining the query.
 - DuckDB allows one read-write process per file. While tql had the `.duckdb` file open, a second `tql query` on the same file failed with a lock error.
-- `extract json` returned `null`, never `false`, for all 1,285 boolean values; the `true` values matched the v1 capability tags on all 257 rows. Coalesced to `false` at load. Filed as a DX note.
+- `extract json` returned `null`, never `false`, for all 1,285 boolean values; the `true` values matched the v1 capability tags on all 257 rows. Coalesced to `false` at load. Filed as TAB-1286. Follow-up run with the five booleans in `required` (`schema-v3-required.json`, 127s): all 1,285 values came back `true` or `false`, and 1,284 matched the v1 tags (`cogito` came back `supports_tools: false`; v1 and v2 had it tagged `tools`).
 - Pull counts and update labels changed between the two extractions (about two hours apart), so each version is scored against its own data.
 
 ## Files
